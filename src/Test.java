@@ -1,18 +1,37 @@
+import java.util.Scanner;
 
 public class Test {
 
     public static void main(String[]args) {
 
-        Element testando = new Element(35);
-        testando.print();
-        testando.toString();
-
+       Scanner leitor = new Scanner(System.in);
         Stack stack = new Stack();
-        stack.push(new Element("OI"));
-        stack.push(new Element(45));
-        stack.push(new Element(4.7));
-        stack.push(new Element('+'));
-        stack.flush();
+       while(leitor.hasNext()){
+           try{
+               int ivalor = leitor.nextInt();
+                stack.push(new Element(ivalor));
+           }catch (Exception e){
+               try{
+                   double dvalor = leitor.nextDouble();
+                   stack.push(new Element(dvalor));
+               }catch (Exception e1){
+                   try {
+                       String svalor = leitor.nextLine();
+                       stack.push(new Element(svalor));
+
+                   }catch (Exception e2){
+                        try{
+                       char cvalor = leitor.next().charAt(0);
+                       stack.push(new Element(cvalor));
+                        }catch (Exception e3){
+                            System.out.println("erro");
+                            break;
+                        }
+                   }
+               }
+           }
+       stack.flush();
+       }
 
     }
 }
