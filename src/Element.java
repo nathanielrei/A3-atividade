@@ -11,7 +11,7 @@ public class Element {
     private int int_value;
     private double double_value;
     private String string_value;
-    private char char_value;
+    private String char_value;
 
     public Element() {
         this.type = Element.UNDEFINED;
@@ -30,9 +30,7 @@ public class Element {
     public Element(String value) {
         this.string_value = value;
         this.type = Element.STRING;
-    }
-    public Element(char value){
-        if(value == '+'){
+        if(value.equals("+")){
             this.char_value = value;
             this.type = Element.CHAR;
         }

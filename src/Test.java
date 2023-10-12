@@ -20,13 +20,8 @@ public class Test {
                        stack.push(new Element(svalor));
 
                    }catch (Exception e2){
-                        try{
-                       char cvalor = leitor.next().charAt(0);
-                       stack.push(new Element(cvalor));
-                        }catch (Exception e3){
-                            System.out.println("erro");
-                            break;
-                        }
+                       System.out.println("fim");
+                       break;
                    }
                }
            }
